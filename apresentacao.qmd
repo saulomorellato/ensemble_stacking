@@ -1,0 +1,40 @@
+---
+title: "Ensemble (Stacking): Tópicos Especiais em Machnie Learning"
+author: "Saulo Morellato"
+format: 
+  revealjs: 
+    css: custom.css
+    smaller: true
+    theme: serif
+    footer: "Ensemble (Stacking): Tópicos Especiais em Machnie Learning"
+editor: visual
+---
+
+# Introdução
+
+## Ensemble
+
+::: extrapad
+-   O método ensemble com bina vários métdos de aprendizado de máquinas, chamados de “base learners”, para fazer previsões.
+
+-   Existem várias técnicas de ensemble, como Bagging, Boosting e Voting.
+
+-   Em Bagging, vários modelos são treinados em subconjuntos aleatórios do conjunto de dados original e suas previsões são combinadas (geralmente por votação majoritária para classificação ou média para regressão).
+
+-   Em Boosting, os modelos são treinados sequencialmente, cada um tentando corrigir os erros do modelo anterior.
+:::
+
+
+## Erro Aleatório
+
+Possíveis explicações para a presença do erro aleatório no modelo são:
+
+::: extrapad
+-   Caráter vago da teoria;
+
+-   Falta de dados disponíveis;
+
+-   Caráter aleatório da natureza;
+
+-   Escolha equivocada para a forma funcional.
+:::

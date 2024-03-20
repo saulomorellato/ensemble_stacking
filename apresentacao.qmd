@@ -73,7 +73,13 @@ Boosting é uma técnica de ensemble que visa criar um modelo forte a partir de 
 :::
 
 
-## Stacking (representação)
+## Stacking (representação - versão 1)
+
+![](fig3.jpg){width="80%"}
+
+
+
+## Stacking (representação - versão 2)
 
 ![](fig2.png){width="80%"}
 

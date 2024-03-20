@@ -20,7 +20,7 @@ editor: visual
 ::: extrapad
 -   O método ensemble combina vários métodos de aprendizado de máquinas, chamados de "base learners", para fazer previsões.
 
--   Existem várias técnicas de ensemble, como Bagging, Boosting e Voting.
+-   Existem várias técnicas de ensemble, como Bagging, Boosting e Stacking.
 
 -   Em **Bagging**, vários modelos são treinados em subconjuntos aleatórios do conjunto de dados original e suas previsões são combinadas (geralmente por votação majoritária para classificação, *voting*, ou média para regressão).
 

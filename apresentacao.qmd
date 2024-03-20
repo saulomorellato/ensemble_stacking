@@ -1,40 +1,83 @@
 ---
-title: "Ensemble (Stacking): Tópicos Especiais em Machnie Learning"
+title: "Stacking em R"
+subtitle: "Tópicos Especiais em Machine Learning"
 author: "Saulo Morellato"
 format: 
   revealjs: 
     css: custom.css
     smaller: true
     theme: serif
-    footer: "Ensemble (Stacking): Tópicos Especiais em Machnie Learning"
+    footer: "Departamento de Estatística - CCE/UFES"
 editor: visual
 ---
 
-# Introdução
+# Diferença entre Ensemble e Stacking
+
+# Ensemble
 
 ## Ensemble
 
 ::: extrapad
--   O método ensemble com bina vários métdos de aprendizado de máquinas, chamados de “base learners”, para fazer previsões.
+-   O método ensemble combina vários métodos de aprendizado de máquinas, chamados de "base learners", para fazer previsões.
 
 -   Existem várias técnicas de ensemble, como Bagging, Boosting e Voting.
 
--   Em Bagging, vários modelos são treinados em subconjuntos aleatórios do conjunto de dados original e suas previsões são combinadas (geralmente por votação majoritária para classificação ou média para regressão).
+-   Em **Bagging**, vários modelos são treinados em subconjuntos aleatórios do conjunto de dados original e suas previsões são combinadas (geralmente por votação majoritária para classificação, *voting*, ou média para regressão).
 
--   Em Boosting, os modelos são treinados sequencialmente, cada um tentando corrigir os erros do modelo anterior.
+-   Em **Boosting**, os modelos são treinados sequencialmente, cada um tentando corrigir os erros do modelo anterior.
 :::
 
 
-## Erro Aleatório
 
-Possíveis explicações para a presença do erro aleatório no modelo são:
+## Bagging
+
+Bagging, que é uma abreviação para Bootstrap Aggregating. Funciona da seguinte maneira:
+
+-   **Amostragem de Bootstrap**: Inicia com a criação de múltiplos conjuntos de dados de treinamento, via bootstrap. Algumas observações podem aparecer várias vezes, enquanto outras podem não aparecer.
+
+-   **Treinamento de Modelos**: Em seguida, um modelo de aprendizado de máquina é treinado separadamente em cada um desses conjuntos de dados. Como cada conjunto de dados é um pouco diferente, os modelos resultantes também serão diferentes.
+
+-   **Agregação de Previsões**: Cada modelo faz sua própria previsão e estás são combinadas de alguma forma para produzir a previsão final. Para problemas de classificação, a combinação é frequentemente feita por votação majoritária, enquanto para problemas de regressão, a média das previsões é geralmente tomada.
+
+
+
+## Boosting
+
+Boosting é uma técnica de ensemble que visa criar um modelo forte a partir de vários modelos fracos. Aqui está como funciona:
+
+-   **Treinamento Sequencial**: Ao contrário do Bagging, o Boosting treina os modelos de forma sequencial. Cada modelo subsequente é treinado para corrigir os erros cometidos pelo modelo anterior.
+
+-   **Ponderação de Erros**: Cada exemplo no conjunto de treinamento é atribuído um peso que determina sua importância no treinamento do modelo. Inicialmente, todos possuem o mesmo peso. À medida que o treinamento progride, os exemplos que foram previstos incorretamente pelo modelo anterior recebem mais peso.
+
+-   **Combinação de Modelos**: Assim como no Bagging, os modelos são combinados para fazer previsões. No entanto, em vez de cada modelo ter a mesma influência na previsão final, no Boosting, cada modelo é atribuído um peso que determina sua influência. Os modelos com maior influência têm um maior pior.
+
+
+
+## Bagging vs. Boosting
+
+![](fig.jpg){width="80%"}
+
+
+
+
+# Stacking
+
+## Stacking
 
 ::: extrapad
--   Caráter vago da teoria;
+-   Stacking, ou empilhamento, é uma técnica específica de ensemble onde os modelos são combinados de maneira mais sofisticada.
 
--   Falta de dados disponíveis;
+-   Em vez de usar uma regra simples como votação majoritária ou média para combinar previsões, o stacking treina um modelo adicional, chamado de “meta-learner” ou “meta-modelo”, para fazer essa combinação.
 
--   Caráter aleatório da natureza;
+-   Os modelos base são treinados com base em um conjunto de treinamento completo, então o meta-modelo é treinado para fazer uma previsão final com base nas previsões dos modelos base.
+:::
 
--   Escolha equivocada para a forma funcional.
+## Ensemble vs. Stacking
+
+::: extrapad
+Em resumo:
+
+-   O ensemble é uma estratégia geral para combinar múltiplos modelos; e
+
+-   O stacking é uma técnica específica de ensemble que usa um modelo adicional para combinar as previsões.
 :::

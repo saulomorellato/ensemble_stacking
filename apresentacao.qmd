@@ -72,6 +72,14 @@ Boosting é uma técnica de ensemble que visa criar um modelo forte a partir de 
 -   Os modelos base são treinados com base em um conjunto de treinamento completo, então o meta-modelo é treinado para fazer uma previsão final com base nas previsões dos modelos base.
 :::
 
+
+## Stacking (representação)
+
+![](fig2.png){width="80%"}
+
+
+
+
 ## Ensemble vs. Stacking
 
 ::: extrapad
